@@ -1,0 +1,97 @@
+
+Nmap Scan Summary:
+
+Scan Target: 192.168.29.0/24
+
+Scan Type: SYN Scan (nmap -sS)
+
+Live Hosts Detected: 4
+
+Total Time Taken: ~108.74 seconds 
+IP address,Open Ports and Identified Potential Risks:
+
+1. Host: 192.168.29.1
+
+Hostname: reliance.reliance
+MAC Address: AB:88:F1:24:08:C8 (Servercom India Private Limited)
+
+Open Ports:
+
+80/tcp – HTTP
+
+443/tcp – HTTPS
+
+7493/tcp – HTTPS
+
+7469/tcp – iSCSI
+
+2489/tcp – Oracle HTTPS
+
+20602/tcp – Teradata ORDBMS
+
+8082/tcp – HTTP Proxy
+
+8200/tcp – Closed (Trinvet)
+
+8443/tcp – HTTPS-Alt
+
+
+Potential Risks:
+
+Unsecured HTTP traffic (port 80) may lead to man-in-the-middle attacks.
+
+HTTPS ports (443, 7493, 8443) must use strong SSL/TLS configurations to prevent downgrade or certificate attacks.
+
+iSCSI (7469) and database ports (2489, 20602) can expose sensitive data if not properly secured.
+
+HTTP Proxy (8082) can be abused for tunneling or anonymized attacks if misconfigured.
+
+
+2. Host: 192.168.29.26
+
+MAC Address: D2:56:46:CC:4E:83 (Unknown)
+
+Open/Filtered Port:
+
+5060/tcp – SIP (Filtered)
+
+
+Potential Risks:
+
+SIP is commonly targeted for VoIP fraud and DoS attacks.
+
+If not filtered properly, could lead to eavesdropping or call hijacking.
+
+
+3. Host: 192.168.29.194
+
+MAC Address: 16:91:F9:13:58:86 (Unknown)
+
+Ports:
+
+No open ports detected (all closed or ignored)
+
+
+Risk:
+
+Currently secure from external TCP service exposure.
+
+
+4. Host: 192.168.29.206
+
+Ports:
+
+135/tcp – MSRPC
+
+139/tcp – NetBIOS-SSN
+
+445/tcp – Microsoft-DS (SMB)
+
+
+Potential Risks:
+
+Worm propagation.
+
+Remote code execution (RPC vulnerabilities).
+
+Lateral movement and unauthorized file sharing.
